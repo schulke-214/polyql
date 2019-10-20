@@ -53,6 +53,19 @@ const { data } = client.fetch(query, variables).then(data => console.log(data));
 
 ### Basic Querying
 
+You can execute Queries with the `client.fetch` function. It takes the query as first and the variables as second parameter.
+
+It returns a Promise which resolves to a `GraphQLResponse`:
+
+```ts
+interface GraphQLResponse {
+	data?: any;
+	errors?: GraphQLError[];
+	extensions?: any;
+	status: number;
+}
+```
+
 <!-- prettier-ignore -->
 ```ts
 const { data } = await client.fetch(`
