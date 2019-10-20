@@ -23,18 +23,20 @@ Send a GraphQL query with a single line of code.
 import { fetch } from 'micro-graphql-client';
 
 const query = `{
-	Movie(title: "Inception") {
-		releaseDate
-		actors {
-			name
-		}
-	}
+    Movie(title: "Inception") {
+        releaseDate
+        actors {
+                name
+        }
+    }
 }`;
 
 fetch('https://api.graph.cool/simple/v1/movies', query).then(data => console.log(data));
 ```
 
-## Usage
+## API
+
+### Setup
 
 ```ts
 import { fetch, GraphQLClient } from 'micro-graphql-client';
@@ -47,19 +49,17 @@ const client = new GraphQLClient({ url, fetch: { headers: {} } });
 const { data } = client.fetch(query, variables).then(data => console.log(data));
 ```
 
-## API
-
 ### Basic Querying
 
 <!-- prettier-ignore -->
 ```ts
 const { data } = await client.fetch(`
-	{
-		allUsers {
-			id
-			name
-		}
-	}
+    {
+        allUsers {
+            id
+            name
+        }
+    }
 `)
 
 console.log(data.allUsers);
@@ -72,16 +72,16 @@ Mutations work pretty much the same.
 <!-- prettier-ignore -->
 ```ts
 const mutation = `
-	mutation ($id: ID!, $name: String!) {
-		actor: updateActor( id: $id, name: $name ) {
-				name
-		}
-	}
+    mutation ($id: ID!, $name: String!) {
+        actor: updateActor( id: $id, name: $name ) {
+            name
+        }
+    }
 `;
 
 const variables = {
-	id: 'ckjxb4324erhol324o32b4',
-	name: 'John Cena'
+    id: 'ckjxb4324erhol324o32b4',
+    name: 'John Cena'
 }
 
 const { data } = await client.fetch(mutation, variables)
@@ -96,17 +96,17 @@ You may have guessed it already.. string interpolation!
 <!-- prettier-ignore -->
 ```ts
 const actor = `
-	on Actor {
-		name
-	}
+    on Actor {
+        name
+    }
 `
 
 const query = `
-	query {
-		allActors {
-			...${actor}
-		}
-	}
+    query {
+        allActors {
+            ...${actor}
+        }
+    }
 `;
 
 const { data } = await client.fetch(query)
@@ -118,18 +118,19 @@ console.log(data.allActors);
 
 ### Client Configuration
 
+<!-- prettier-ignore -->
 ```ts
 import { GraphQLClient } from 'micro-graphql-client';
 
 const client = new GraphQLClient({
-	// the endpoint of the graphql api you want to speak to
-	url: process.env.API_URL,
-	// these options are passed directly to fetch
-	fetch: {
-		headers: {
-			Authorization: `Token ${process.env.YOUR_TOKEN}`
-		}
-	}
+    // the endpoint of the graphql api you want to speak to
+    url: process.env.API_URL,
+    // these options are passed directly to fetch
+    fetch: {
+        headers: {
+            Authorization: `Token ${process.env.YOUR_TOKEN}`
+        }
+    }
 });
 
 const { data } = client.fetch(query, variables).then(data => console.log(data));
@@ -143,13 +144,14 @@ These transporters allow you to swap out the request execution. This allows you 
 
 Lets first look at the way you can swap out the default `HTTPBodyTransporter` with other built ins.
 
+<!-- prettier-ignore -->
 ```ts
 import { GraphQLClient, HTTPQueryStringTransporter } from 'micro-graphql-client';
 
 const url = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
 
 const client = new GraphQLClient({
-	transporter: new HTTPQueryStringTransporter(url)
+    transporter: new HTTPQueryStringTransporter(url)
 });
 ```
 
@@ -164,21 +166,22 @@ This allows you to build your own small Transporter for your specific usecase. Y
 
 #### Building your own Transporter
 
+<!-- prettier-ignore -->
 ```ts
 import { GraphQLTransporter, FetchOptions } from 'micro-graphql-client';
 
 class YourAwesomeTransporter implements GraphQLTransporter {
-	url: string;
-	options: FetchOptions;
+    url: string;
+    options: FetchOptions;
 
-	constructor(url: string, options: FetchOptions = {}) {
-		this.url = url;
-		this.options = options;
-	}
+    constructor(url: string, options: FetchOptions = {}) {
+        this.url = url;
+        this.options = options;
+    }
 
-	public async fetch(request: GraphQLRequest): Promise<GraphQLResponse> {
-		// here you can do what ever you want as long as you return a GraphQLResponse
-	}
+    public async fetch(request: GraphQLRequest): Promise<GraphQLResponse> {
+        // here you can do what ever you want as long as you return a GraphQLResponse
+    }
 }
 ```
 
