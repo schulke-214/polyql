@@ -1,4 +1,4 @@
-# micro-graphql-client
+# nano-graphql-client
 
 An extremely simple GraphQL-Client powered by the Fetch API.
 
@@ -12,7 +12,7 @@ An extremely simple GraphQL-Client powered by the Fetch API.
 ## Installation
 
 ```sh
-yarn add micro-graphql-client
+yarn add nano-graphql-client
 ```
 
 ## Quickstart
@@ -20,7 +20,7 @@ yarn add micro-graphql-client
 Send a GraphQL query with a single line of code.
 
 ```ts
-import { fetch } from 'micro-graphql-client';
+import { fetch } from 'nano-graphql-client';
 
 const query = `
     {
@@ -41,7 +41,7 @@ fetch('https://api.graph.cool/simple/v1/movies', query).then(data => console.log
 ### Setup
 
 ```ts
-import { fetch, GraphQLClient } from 'micro-graphql-client';
+import { fetch, GraphQLClient } from 'nano-graphql-client';
 
 // run queries as a function
 fetch(url, query, variables).then(data => console.log(data));
@@ -135,7 +135,7 @@ console.log(data.allActors);
 
 <!-- prettier-ignore -->
 ```ts
-import { GraphQLClient } from 'micro-graphql-client';
+import { GraphQLClient } from 'nano-graphql-client';
 
 const client = new GraphQLClient({
     // the endpoint of the graphql api you want to speak to
@@ -161,7 +161,7 @@ Lets first look at the way you can swap out the default `HTTPBodyTransporter` wi
 
 <!-- prettier-ignore -->
 ```ts
-import { GraphQLClient, HTTPQueryStringTransporter } from 'micro-graphql-client';
+import { GraphQLClient, HTTPQueryStringTransporter } from 'nano-graphql-client';
 
 const url = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
 
@@ -184,7 +184,7 @@ This allows you to build your own small Transporter for your specific usecase. Y
 
 <!-- prettier-ignore -->
 ```ts
-import { GraphQLTransporter, FetchOptions } from 'micro-graphql-client';
+import { GraphQLTransporter, FetchOptions } from 'nano-graphql-client';
 
 class YourAwesomeTransporter implements GraphQLTransporter {
     url: string;
