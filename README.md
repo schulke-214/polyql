@@ -22,14 +22,16 @@ Send a GraphQL query with a single line of code.
 ```ts
 import { fetch } from 'micro-graphql-client';
 
-const query = `{
-    Movie(title: "Inception") {
-        releaseDate
-        actors {
-                name
+const query = `
+    {
+        Movie(title: "Inception") {
+            releaseDate
+            actors {
+                    name
+            }
         }
     }
-}`;
+`;
 
 fetch('https://api.graph.cool/simple/v1/movies', query).then(data => console.log(data));
 ```
@@ -130,7 +132,7 @@ const client = new GraphQLClient({
         headers: {
             Authorization: `Token ${process.env.YOUR_TOKEN}`
         }
-    }
+	}
 });
 
 const { data } = client.fetch(query, variables).then(data => console.log(data));
@@ -151,7 +153,8 @@ import { GraphQLClient, HTTPQueryStringTransporter } from 'micro-graphql-client'
 const url = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
 
 const client = new GraphQLClient({
-    transporter: new HTTPQueryStringTransporter(url)
+	// if the transporter is provided, 'url' and 'fetch' are ignored
+    transporter: new HTTPQueryStringTransporter(url, options)
 });
 ```
 
@@ -185,146 +188,6 @@ class YourAwesomeTransporter implements GraphQLTransporter {
 }
 ```
 
-<!--
-
-## Examples
-
-### Authentication via HTTP header
-
-```js
-import { GraphQLClient } from 'micro-graphql-client';
-
-(async () => {
-	const client = new GraphQLClient({
-		url: 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr',
-		fetch: {
-			headers: {
-				Authorization: 'Token MY_TOKEN'
-			}
-		}
-	});
-
-	const query = `
-		{
-			Movie(title: "Inception") {
-				releaseDate
-				actors {
-					name
-				}
-			}
-		}
-	`;
-
-	const data = await client.fetch(query);
-	console.log(data);
-})().catch(console.error);
-```
-
-### Passing more options to fetch
-
-```js
-import { GraphQLClient } from 'micro-graphql-client';
-
-(async () => {
-	const client = new GraphQLClient({
-		url: 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr',
-		fetch: {
-			credentials: 'include',
-			mode: 'cors'
-		}
-	});
-
-	const query = `
-		{
-			Movie(title: "Inception") {
-				releaseDate
-				actors {
-					name
-				}
-			}
-		}
-	`;
-
-	const data = await client.fetch(query);
-	console.log(data);
-})().catch(console.error);
-```
-
-### Using variables
-
-```js
-import { fetch } from 'micro-graphql-client';
-
-(async () => {
-	const url = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
-
-	const query = `
-		query getMovie($title: String!) {
-			Movie(title: $title) {
-				releaseDate
-				actors {
-					name
-				}
-			}
-		}
-	`;
-
-	const variables = {
-		title: 'Inception'
-	};
-
-	const data = await fetch(url, query, variables);
-	console.log(data));
-})().catch(console.error);
-```
-
-[TypeScript Source](examples/using-variables.ts)
-
-### Error handling
-
-```js
-import { fetch } from 'micro-graphql-client';
-
-(async () => {
-	try {
-		const data = await fetch(url, query);
-		console.log(data));
-	} catch (error) {
-		console.error(error));
-	}
-})().catch(console.error);
-```
-
-[TypeScript Source](examples/error-handling)
-
-### Using `require` instead of `import`
-
-```js
-const { fetch } = require('micro-graphql-client');
-
-(async () => {
-	const url = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
-
-	const query = `
-		{
-			Movie(title: "Inception") {
-				releaseDate
-				actors {
-					name
-				}
-			}
-		}
-	`;
-
-	const data = await request(url, query);
-	console.log(data);
-})().catch(console.error);
-```
-
--->
-
-## FAQ
-
 ## Credits
 
-The primary inspiration to build this library came from [micro-graphql-client]() and [lokka](). The only reason i built a client myself was that i really missed the out-of-the-box support for queries via `GET` / QueryString. No simple client were able to support that, without me configuring alot of stuff.
+The primary inspiration to build this library came from [graphql-request](https://github.com/prisma-labs/graphql-request) and [lokka](https://github.com/kadirahq/lokka). The only reason i built a client myself was that i really missed the out-of-the-box support for queries via `GET` / QueryString. No simple client were able to support that, without me configuring alot of stuff.
