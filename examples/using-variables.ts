@@ -21,4 +21,6 @@ import { GraphQLClient } from '../lib';
 	};
 
 	const result = await client.fetch(query, variables);
+
+	console.log(result);
 })().catch(console.error);

@@ -1,8 +1,11 @@
 import { GraphQLClient, HTTPQueryStringTransporter } from '../lib';
 
 (async () => {
-	const endpoint = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
-	const client = new GraphQLClient(endpoint);
+	const url = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
+
+	const client = new GraphQLClient({
+		transporter: new HTTPQueryStringTransporter(url)
+	});
 
 	const query = `
 		query getMovie($title: String!) {
