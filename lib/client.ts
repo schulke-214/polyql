@@ -1,16 +1,30 @@
 import 'cross-fetch/polyfill';
 
-// import { ClientError, GraphQLError, HeadersasHttpHeaders, Options, Variables, GraphQLResponse } from './types';
-// export { ClientError } from './types';
-
-import { GraphQLResponse, Options, Variables } from './types';
+import { GraphQLResponse, FetchOptions, Variables } from './types';
 import { GraphQLTransporter, HTTPBodyTransporter } from './transporter';
+
+export interface ClientOptions {
+	transporter?: GraphQLTransporter;
+	url?: string;
+	fetch?: FetchOptions;
+}
 
 export class GraphQLClient {
 	private transporter: GraphQLTransporter;
 
-	constructor(url: string = '', options: Options = {}) {
-		this.transporter = new HTTPBodyTransporter(url, options);
+	constructor(options: ClientOptions = {}) {
+		if (options.transporter) {
+			this.transporter = options.transporter;
+			return;
+		}
+
+		if (!options.url) {
+			throw new Error(
+				'GraphQLClient: options.url and options.transporter is null - provide one of them to remove this error!'
+			);
+		}
+
+		this.transporter = new HTTPBodyTransporter(options.url, options.fetch);
 	}
 
 	public async fetch(query: string, variables: Variables = {}): Promise<GraphQLResponse> {
