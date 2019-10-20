@@ -5,7 +5,6 @@ export interface Headers {
 }
 
 export interface Options {
-	method?: RequestInit['method'];
 	headers?: Headers;
 	mode?: RequestInit['mode'];
 	credentials?: RequestInit['credentials'];
@@ -30,16 +29,16 @@ export interface GraphQLResponse {
 	[key: string]: any;
 }
 
-export interface GraphQLRequestContext {
+export interface GraphQLRequest {
 	query: string;
-	variables?: Variables;
+	variables: Variables;
 }
 
 export class ClientError extends Error {
 	response: GraphQLResponse;
-	request: GraphQLRequestContext;
+	request: GraphQLRequest;
 
-	constructor(response: GraphQLResponse, request: GraphQLRequestContext) {
+	constructor(response: GraphQLResponse, request: GraphQLRequest) {
 		const message = `${ClientError.extractMessage(response)}: ${JSON.stringify({ response, request })}`;
 
 		super(message);
