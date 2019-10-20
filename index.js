@@ -1,1 +1,2 @@
-module.exports = require('dist');
+require('regenerator-runtime/runtime');
+module.exports = require('./dist');
