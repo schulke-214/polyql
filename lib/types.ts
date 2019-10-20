@@ -1,10 +1,12 @@
-export type Variables = { [key: string]: any };
+import { GraphQLTransporter } from './transporter';
 
-export interface Headers {
-	[key: string]: string;
+export interface ClientOptions {
+	transporter?: GraphQLTransporter;
+	url?: string;
+	fetch?: FetchOptions;
 }
 
-export interface Options {
+export interface FetchOptions {
 	headers?: Headers;
 	mode?: RequestInit['mode'];
 	credentials?: RequestInit['credentials'];
@@ -19,6 +21,12 @@ export interface GraphQLError {
 	message: string;
 	locations: { line: number; column: number }[];
 	path: string[];
+}
+
+export type Variables = { [key: string]: any };
+
+export interface Headers {
+	[key: string]: string;
 }
 
 export interface GraphQLResponse {
