@@ -6,9 +6,9 @@
 	"repository": "git@github.com:schulke-214/micro-graphql-fetch.git",
 	"author": "schulke-214 <schulkemaximilian@gmail.com>",
 	"license": "MIT",
-	"typings": "./dist/index.d.ts",
+	"typings": "./dist/lib/index.d.ts",
 	"scripts": {
-		"build": "./node_modules/.bin/babel lib --extensions '.ts' --out-dir dist",
+		"build": "rm -rf dist && tsc --declaration --outDir dist --emitDeclarationOnly && ./node_modules/.bin/babel lib --extensions '.ts' --out-dir dist",
 		"prepublish": "yarn build",
 		"test": ""
 	},
