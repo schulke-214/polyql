@@ -21,7 +21,8 @@
 	],
 	"dependencies": {
 		"core-js": "3",
-		"cross-fetch": "2.2.2"
+		"cross-fetch": "2.2.2",
+		"qs": "^6.9.0"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.6.4",
