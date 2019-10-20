@@ -22,7 +22,7 @@ import { GraphQLClient, HTTPQueryStringTransporter } from '../lib';
 		title: 'Inception'
 	};
 
-	const result = await client.fetch(query, variables);
+	const { data } = await client.fetch(query, variables);
 
-	console.log(result);
+	console.log(data);
 })().catch(console.error);

@@ -18,7 +18,7 @@ import { fetch } from '../lib';
 		title: 'Inception'
 	};
 
-	const result = await fetch(url, query, variables);
+	const { data } = await fetch(url, query, variables);
 
-	console.log(result);
+	console.log(data);
 })().catch(console.error);
