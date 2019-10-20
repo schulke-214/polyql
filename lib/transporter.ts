@@ -17,8 +17,6 @@ export class HTTPQueryStringTransporter implements GraphQLTransporter {
 	}
 
 	public async fetch(request: GraphQLRequest): Promise<GraphQLResponse> {
-		console.log('> http-query-string-transporter', this.options);
-
 		const params = qs.stringify(request);
 		const url = `${this.url}?${params}`;
 
@@ -54,8 +52,6 @@ export class HTTPBodyTransporter implements GraphQLTransporter {
 	}
 
 	public async fetch(request: GraphQLRequest): Promise<GraphQLResponse> {
-		console.log('> http-body-transporter', this.options);
-
 		const body = JSON.stringify(request);
 		const response = await fetch(this.url, {
 			method: 'POST',
