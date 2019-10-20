@@ -15,6 +15,8 @@ An extremely simple GraphQL-Client powered by the Fetch API.
 yarn add micro-graphql-client
 ```
 
+<!--
+
 ## Quickstart
 
 Send a GraphQL query with a single line of code.
@@ -80,8 +82,6 @@ import { GraphQLClient } from 'micro-graphql-client';
 })().catch(console.error);
 ```
 
-<!-- [TypeScript Source](examples/authentication-via-http-header.ts) -->
-
 ### Passing more options to fetch
 
 ```js
@@ -111,8 +111,6 @@ import { GraphQLClient } from 'micro-graphql-client';
 	console.log(data);
 })().catch(console.error);
 ```
-
-<!-- [TypeScript Source](examples/passing-more-options-to-fetch.ts) -->
 
 ### Using variables
 
@@ -184,6 +182,8 @@ const { fetch } = require('micro-graphql-client');
 	console.log(data);
 })().catch(console.error);
 ```
+
+-->
 
 ## FAQ
 
