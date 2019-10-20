@@ -1,9 +1,8 @@
-import { GraphQLClient } from '../lib';
+import { GraphQLClient, HTTPQueryStringTransporter } from '../lib';
 
 (async () => {
-	const client = new GraphQLClient({
-		url: 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
-	});
+	const endpoint = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
+	const client = new GraphQLClient(endpoint);
 
 	const query = `
 		query getMovie($title: String!) {
@@ -21,4 +20,6 @@ import { GraphQLClient } from '../lib';
 	};
 
 	const result = await client.fetch(query, variables);
+
+	console.log(result);
 })().catch(console.error);
