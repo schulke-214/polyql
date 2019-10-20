@@ -1,0 +1,9 @@
+{
+  "name": "micro-graphql-fetch",
+  "version": "0.1.0",
+  "description": "An extremely simple GraphQL-Client powered by the Fetch API",
+  "main": "index.js",
+  "repository": "git@github.com:schulke-214/micro-graphql-fetch.git",
+  "author": "schulke-214 <schulkemaximilian@gmail.com>",
+  "license": "MIT"
+}
