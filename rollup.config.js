@@ -1,18 +1,18 @@
-import builtins from "rollup-plugin-node-builtins"
-import resolve from "rollup-plugin-node-resolve"
+import builtins from 'rollup-plugin-node-builtins';
+import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-    input: "src/index.js",
-    output: [
-        {
-            file: "lib/polyql.es.js",
-            format: "es"
-        },
-        {
-            file: "lib/polyql.cjs.js",
-            format: "cjs"
-        }
-    ],
-    plugins: [builtins(), resolve()],
-    external: []
-}
+	input: 'lib/index.js',
+	output: [
+		{
+			file: 'dist/polyql.es.js',
+			format: 'es'
+		},
+		{
+			file: 'dist/polyql.cjs.js',
+			format: 'cjs'
+		}
+	],
+	plugins: [builtins(), resolve()],
+	external: []
+};
