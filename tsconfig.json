@@ -11,6 +11,7 @@
 		"outDir": "dist",
 		"declaration": true,
 		"declarationDir": "./dist",
+		"noImplicitAny": true,
 		"lib": ["es2015", "es2016", "dom", "esnext.asynciterable"]
 	},
 	"include": ["lib"],

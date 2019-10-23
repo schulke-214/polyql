@@ -4,6 +4,7 @@ import typescript from 'rollup-plugin-typescript';
 import babel from 'rollup-plugin-babel';
 import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 
 export default {
 	input: 'lib/index.ts',
@@ -30,6 +31,7 @@ export default {
 			runtimeHelpers: true
 		}),
 		builtins(),
-		resolve()
+		resolve(),
+		terser()
 	]
 };
