@@ -1,7 +1,6 @@
 module.exports = {
 	title: 'PolyQL',
 	description: '',
-	base: '/{% project name }/',
 	themeConfig: {
 		nav: [{ text: 'Home', link: '/' }, { text: 'Guide', link: '/Guide.md' }],
 		sidebar: 'auto',

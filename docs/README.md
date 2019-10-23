@@ -1,8 +1,8 @@
 ---
 home: true
-heroImage:
+heroImage: logo.svg
 actionText: Get Started →
-actionLink: /Guide.html
+actionLink: /guide
 features:
     - title: Simple
       details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -16,7 +16,9 @@ footer: MIT Licensed
 ### Installation
 
 ```
-npm install --save polyql
+yarn add polyql
 ```
 
 ### Usage
+
+<<< @/examples/usage.ts
