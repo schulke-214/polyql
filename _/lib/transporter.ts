@@ -17,6 +17,8 @@ export class HTTPQueryStringTransporter implements GraphQLTransporter {
 	}
 
 	public async fetch(request: GraphQLRequest): Promise<GraphQLResponse> {
+		console.log(request);
+
 		const params = qs.stringify(request);
 		const url = `${this.url}?${params}`;
 
@@ -24,6 +26,8 @@ export class HTTPQueryStringTransporter implements GraphQLTransporter {
 			method: 'GET',
 			...this.options
 		});
+
+		console.log(qs.parse(params));
 
 		try {
 			return await response.json();

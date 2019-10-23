@@ -22,6 +22,9 @@ export class GraphQLClient {
 	}
 
 	public async fetch(query: string, variables: Variables = {}): Promise<GraphQLResponse> {
+		// this deletes all \n and recuring occurences of \t
+		query = query.replace(/\r?\n|\r|/g, '').replace(/\t{2,}/g, ' ');
+
 		return await this.transporter.fetch({
 			query,
 			variables
