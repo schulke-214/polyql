@@ -4,7 +4,6 @@
 [![devDependencies Status](https://david-dm.org/schulke-214/polyql/dev-status.svg)](https://david-dm.org/schulke-214/polyql?type=dev)
 [![npm](https://img.shields.io/npm/v/polyql.svg)](https://www.npmjs.com/package/polyql)
 [![license](https://img.shields.io/github/license/schulke-214/polyql.svg)]()
-[![dependabot](https://img.shields.io/badge/dependabot-enabled-brightgreen.svg?style=plastic&logo=dependabot)]()
 
 An extremely simple GraphQL-Client powered by the Fetch API.
 
