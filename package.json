@@ -1,17 +1,17 @@
 {
 	"name": "polyql",
-	"version": "1.0.0",
-	"description": "",
-	"main": "dist/polyql.js",
-	"module": "dist/polyql.es.js",
-	"jsnext:main": "dist/polyql.es.js",
-	"types": "dist/index.d.ts",
+	"version": "0.0.1",
+	"description": "A modern GraphQL-Client powered by the Fetch API",
+	"main": "./dist/polyql.js",
+	"browser": "./dist/polyql.umd.js",
+	"module": "./dist/polyql.es.js",
+	"jsnext:main": "./dist/polyql.es.js",
+	"types": "./dist/index.d.ts",
 	"engines": {
 		"node": ">=8.0.0"
 	},
 	"directories": {
-		"dist": "dist",
-		"lib": "lib",
+		"lib": "dist",
 		"test": "tests",
 		"doc": "docs"
 	},
@@ -24,7 +24,14 @@
 		"type": "git",
 		"url": "git+https://github.com/schulke-214/polyql.git"
 	},
-	"keywords": [],
+	"keywords": [
+		"polyql",
+		"graphql",
+		"apollo",
+		"graphql-client",
+		"request",
+		"fetch"
+	],
 	"author": "schulke-214 <schulkemaximilian@gmail.com>",
 	"license": "MIT",
 	"bugs": {

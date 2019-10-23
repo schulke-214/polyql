@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/v/polyql.svg)](https://www.npmjs.com/package/polyql)
 [![license](https://img.shields.io/github/license/schulke-214/polyql.svg)]()
 
-An extremely simple GraphQL-Client powered by the Fetch API.
+An modern simple GraphQL-Client powered by the Fetch API.
 
 ## Features
 
