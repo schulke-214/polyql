@@ -2,7 +2,12 @@ module.exports = {
 	title: 'PolyQL',
 	description: '',
 	themeConfig: {
-		nav: [{ text: 'Home', link: '/' }, { text: 'Guide', link: '/Guide.md' }],
+		nav: [
+			{ text: 'Home', link: '/' },
+			{ text: 'Usage', link: '/usage.md' },
+			{ text: 'Advanced Usage', link: '/advanced-usage.md' }
+		],
+		logo: '/logo.png',
 		sidebar: 'auto',
 		// Assumes GitHub. Can also be a full GitLab url.
 		repo: 'schulke-214/polyql',
