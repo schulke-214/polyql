@@ -2,14 +2,15 @@
 home: true
 heroImage: logo.svg
 actionText: Get Started →
-actionLink: /guide
+actionLink: /usage
+description: A modern and lightweight GraphQL Client.
 features:
-    - title: Simple
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    - title: Effective
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     - title: Lightweight
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      details: With less than 3kb bundle size PolyQL is a perfect fit for smaller apps.
+    - title: Extendable
+      details: Easily extendable so you can make it work for your usecase in minutes.
+    - title: Modern
+      details: Really simple modern promise based API - built for async / await.
 footer: MIT Licensed
 ---
 
@@ -19,6 +20,8 @@ footer: MIT Licensed
 yarn add polyql
 ```
 
-### Usage
+## Quickstart
 
-<<< @/examples/usage.ts
+Send a GraphQL query with a single line of code.
+
+<<< @/examples/quickstart.ts
