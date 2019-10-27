@@ -17,6 +17,7 @@
 		"clean": "rm -rf ./lib",
 		"docs:dev": "vuepress dev docs",
 		"docs:build": "vuepress build docs",
+		"docs:publish": "./scripts/deploy-docs.sh",
 		"size": "bundlesize"
 	},
 	"devDependencies": {

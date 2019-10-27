@@ -15,6 +15,10 @@ An modern simple GraphQL-Client powered by the Fetch API.
 yarn add polyql
 ```
 
+## Documentation
+
+The documentation is available [here](https://schulke-214.github.io/polyql).
+
 ## Quickstart
 
 ```ts
