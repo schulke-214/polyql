@@ -16,6 +16,10 @@ footer: MIT Licensed
 
 ## Installation
 
+:::warning
+This library is very unstable at the moment. I'd suggest only playing around with it until it's stable (v1.0.0 upwards).
+:::
+
 ```
 yarn add polyql
 ```

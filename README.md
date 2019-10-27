@@ -7,6 +7,8 @@
 
 An modern simple GraphQL-Client powered by the Fetch API.
 
+> **Warning:** This library is very unstable at the moment. I'd suggest only playing around with it until it's stable (v1.0.0 upwards).
+
 ## Installation
 
 ```
