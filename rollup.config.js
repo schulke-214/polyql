@@ -24,7 +24,7 @@ export default {
 			name: pkg.name
 		}
 	],
-	// external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+	external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
 	plugins: [
 		resolve({
 			browser: true,
@@ -37,6 +37,10 @@ export default {
 			runtimeHelpers: true
 		}),
 		typescript(),
-		terser()
+		terser({
+			output: {
+				comments: () => false
+			}
+		})
 	]
 };

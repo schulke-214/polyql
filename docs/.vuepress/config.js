@@ -8,7 +8,7 @@ module.exports = {
 			{ text: 'Usage', link: '/usage.md' },
 			{ text: 'Advanced Usage', link: '/advanced-usage.md' }
 		],
-		logo: '/logo.png',
+		logo: 'logo.png',
 		sidebar: 'auto',
 		// Assumes GitHub. Can also be a full GitLab url.
 		repo: 'schulke-214/polyql',

@@ -6,7 +6,7 @@ actionLink: /usage
 description: A modern and lightweight GraphQL Client.
 features:
     - title: Lightweight
-      details: With less than 3kb bundle size PolyQL is a perfect fit for smaller apps.
+      details: With less than 7kb bundle size PolyQL is a perfect fit for smaller apps.
     - title: Extendable
       details: Easily extendable so you can make it work for your specific usecase.
     - title: Modern
@@ -14,11 +14,11 @@ features:
 footer: MIT Licensed
 ---
 
-## Installation
-
 :::warning
 This library is very unstable at the moment. I'd suggest only playing around with it until it's stable (v1.0.0 upwards).
 :::
+
+## Installation
 
 ```
 yarn add polyql

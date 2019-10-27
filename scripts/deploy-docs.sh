@@ -16,3 +16,5 @@ git commit -m 'build: deploy docs'
 git push -f git@github.com:schulke-214/polyql.git master:gh-pages
 
 cd -
+
+rm -rf ./docs/.vuepress/dist
