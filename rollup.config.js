@@ -1,13 +1,14 @@
 import pkg from './package.json';
 
-import typescript from 'rollup-plugin-typescript';
-import babel from 'rollup-plugin-babel';
 import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
+import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-	input: 'lib/index.ts',
+	input: 'src/index.ts',
 	output: [
 		{
 			file: pkg.module,
@@ -23,15 +24,19 @@ export default {
 			name: pkg.name
 		}
 	],
-	external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+	// external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
 	plugins: [
-		typescript(),
+		resolve({
+			browser: true,
+			preferBuiltins: false
+		}),
+		commonjs(),
+		builtins(),
 		babel({
 			exclude: 'node_modules/**',
 			runtimeHelpers: true
 		}),
-		builtins(),
-		resolve(),
+		typescript(),
 		terser()
 	]
 };

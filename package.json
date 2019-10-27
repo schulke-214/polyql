@@ -2,17 +2,19 @@
 	"name": "polyql",
 	"version": "0.0.1",
 	"description": "A modern GraphQL-Client powered by the Fetch API",
-	"main": "./dist/polyql.cjs.js",
-	"browser": "./dist/polyql.umd.js",
-	"module": "./dist/polyql.es.js",
-	"jsnext:main": "./dist/polyql.es.js",
-	"types": "./dist/index.d.ts",
+	"main": "./lib/polyql.cjs.js",
+	"browser": "./lib/polyql.umd.js",
+	"module": "./lib/polyql.es.js",
+	"jsnext:main": "./lib/polyql.es.js",
+	"types": "./lib/index.d.ts",
 	"author": "schulke-214 <schulkemaximilian@gmail.com>",
 	"license": "MIT",
 	"scripts": {
 		"test": "jest",
 		"dev": "rollup -c rollup.config.js -w",
 		"build": "rollup -c rollup.config.js",
+		"build:clean": "yarn clean && yarn build",
+		"clean": "rm -rf ./lib",
 		"docs:dev": "vuepress dev docs",
 		"docs:build": "vuepress build docs",
 		"size": "bundlesize"
@@ -21,37 +23,41 @@
 		"@babel/core": "^7.4.5",
 		"@babel/preset-env": "^7.4.5",
 		"@babel/preset-typescript": "^7.6.0",
+		"@types/qs": "^6.5.3",
 		"bundlesize": "^0.18.0",
 		"codacy-coverage": "^3.4.0",
 		"jest": "^24.8.0",
 		"rollup": "^1.12.3",
 		"rollup-plugin-babel": "^4.3.3",
+		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-node-builtins": "^2.1.2",
 		"rollup-plugin-node-resolve": "^5.0.0",
 		"rollup-plugin-terser": "^5.1.2",
-		"rollup-plugin-typescript": "^1.0.1",
+		"rollup-plugin-typescript2": "^0.24.3",
 		"tslib": "^1.10.0",
+		"typescript": "^3.6.4",
 		"vuepress": "^0.14.11"
 	},
 	"dependencies": {
-		"typescript": "^3.6.4"
+		"cross-fetch": "^3.0.4",
+		"qs": "^6.9.0"
 	},
 	"engines": {
 		"node": ">=8.0.0"
 	},
 	"bundlesize": [
 		{
-			"path": "./dist/polyql.*.js",
+			"path": "./lib/polyql.*.js",
 			"maxSize": "3 kB"
 		}
 	],
 	"directories": {
-		"lib": "dist",
+		"lib": "lib",
 		"test": "tests",
 		"doc": "docs"
 	},
 	"files": [
-		"dist/",
+		"lib/",
 		"types/",
 		"bin/"
 	],

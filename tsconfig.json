@@ -4,16 +4,15 @@
 		"moduleResolution": "node",
 		"rootDir": ".",
 		"target": "es5",
-		"sourceMap": true,
+		"sourceMap": false,
 		"strictNullChecks": true,
 		"noUnusedLocals": true,
 		"esModuleInterop": true,
 		"outDir": "dist",
-		"declaration": true,
-		"declarationDir": "./dist",
+		"declaration": false,
 		"noImplicitAny": true,
 		"lib": ["es2015", "es2016", "dom", "esnext.asynciterable"]
 	},
-	"include": ["lib"],
-	"exclude": ["node_modules", "dist"]
+	"include": ["src"],
+	"exclude": ["node_modules", "lib"]
 }
