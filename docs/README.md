@@ -8,17 +8,25 @@ features:
     - title: Lightweight
       details: With less than 3kb bundle size PolyQL is a perfect fit for smaller apps.
     - title: Extendable
-      details: Easily extendable so you can make it work for your usecase in minutes.
+      details: Easily extendable so you can make it work for your specific usecase.
     - title: Modern
       details: Really simple modern promise based API - built for async / await.
 footer: MIT Licensed
 ---
 
-### Installation
+## Installation
 
 ```
 yarn add polyql
 ```
+
+```html
+<script src="https://unpkg.com/polyql@latest/lib/polyql.umd.js" />
+```
+
+:::tip
+If you include the umd module the `polyql` variable will be available on the window object.
+:::
 
 ## Quickstart
 

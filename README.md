@@ -7,14 +7,35 @@
 
 An modern simple GraphQL-Client powered by the Fetch API.
 
+## Installation
+
+```
+yarn add polyql
+```
+
+## Quickstart
+
+```ts
+import { fetch } from 'polyql';
+
+const query = `
+    {
+        Movie(title: "Inception") {
+            releaseDate
+            actors {
+                    name
+            }
+        }
+    }
+`;
+
+fetch('https://api.graph.cool/simple/v1/movies', query).then(data => console.log(data));
+```
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of
 conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-PolyQL use [SemVer](http://semver.org/) for versioning.
 
 ## Credits
 
