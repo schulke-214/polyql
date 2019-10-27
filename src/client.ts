@@ -1,5 +1,3 @@
-import 'cross-fetch/polyfill';
-
 import { GraphQLResponse, ClientOptions, Variables } from './types';
 import { GraphQLTransporter, HTTPBodyTransporter } from './transporter';
 

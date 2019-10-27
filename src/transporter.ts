@@ -1,5 +1,5 @@
 import { GraphQLRequest, GraphQLResponse, FetchOptions } from './types';
-import qs from 'qs';
+// import qs from 'qs';
 
 export interface GraphQLTransporter {
 	url: string;
@@ -19,7 +19,7 @@ export class HTTPQueryStringTransporter implements GraphQLTransporter {
 	public async fetch(request: GraphQLRequest): Promise<GraphQLResponse> {
 		console.log(request);
 
-		const params = qs.stringify(request);
+		const params = JSON.stringify(request);
 		const url = `${this.url}?${params}`;
 
 		const response = await fetch(url, {
@@ -27,7 +27,7 @@ export class HTTPQueryStringTransporter implements GraphQLTransporter {
 			...this.options
 		});
 
-		console.log(qs.parse(params));
+		// console.log(qs.parse(params));
 
 		try {
 			return await response.json();

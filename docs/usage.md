@@ -10,7 +10,7 @@ fetch(url, query, variables).then(data => console.log(data));
 
 // ... or create a client which can be reused
 const client = new GraphQLClient({ url, fetch: { headers: {} } });
-const { data } = client.fetch(query, variables).then(data => console.log(data));
+const { data } = await client.fetch(query, variables);
 ```
 
 ## Basic Querying
