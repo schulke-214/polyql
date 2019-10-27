@@ -1,6 +1,6 @@
 {
 	"name": "polyql",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A modern GraphQL-Client powered by the Fetch API",
 	"main": "./lib/polyql.cjs.js",
 	"browser": "./lib/polyql.umd.js",
