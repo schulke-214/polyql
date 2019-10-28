@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import pkg from './package.json';
 
 import builtins from 'rollup-plugin-node-builtins';
@@ -7,40 +8,55 @@ import typescript from 'rollup-plugin-typescript2';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
-export default {
-	input: 'src/index.ts',
-	output: [
-		{
-			file: pkg.module,
+export default [
+	{
+		input: 'src/index.ts',
+		output: [
+			{
+				file: pkg.module,
+				format: 'es'
+			},
+			{
+				file: pkg.main,
+				format: 'cjs'
+			},
+			{
+				file: pkg.browser,
+				format: 'iife',
+				name: pkg.name
+			}
+		],
+		external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+		plugins: [
+			resolve({
+				browser: true,
+				preferBuiltins: false
+			}),
+			commonjs(),
+			builtins(),
+			babel({
+				exclude: 'node_modules/**',
+				runtimeHelpers: true
+			}),
+			typescript(),
+			terser({
+				output: {
+					comments: () => false
+				}
+			}),
+			{
+				generateBundle() {
+					exec(`${process.cwd()}/scripts/post-build.sh`);
+				}
+			}
+		]
+	},
+	{
+		input: 'src/*.ts',
+		output: {
+			file: 'lib/neu/index.ts',
 			format: 'es'
 		},
-		{
-			file: pkg.main,
-			format: 'cjs'
-		},
-		{
-			file: pkg.browser,
-			format: 'iife',
-			name: pkg.name
-		}
-	],
-	external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
-	plugins: [
-		resolve({
-			browser: true,
-			preferBuiltins: false
-		}),
-		commonjs(),
-		builtins(),
-		babel({
-			exclude: 'node_modules/**',
-			runtimeHelpers: true
-		}),
-		typescript(),
-		terser({
-			output: {
-				comments: () => false
-			}
-		})
-	]
-};
+		plugins: [typescript()]
+	}
+];
