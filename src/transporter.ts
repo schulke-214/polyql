@@ -3,7 +3,7 @@ import { GraphQLRequest, GraphQLResponse, FetchOptions } from './types';
 
 export interface GraphQLTransporter {
 	url: string;
-	options?: FetchOptions;
+	options: FetchOptions;
 	fetch(request: GraphQLRequest): Promise<GraphQLResponse>;
 }
 
