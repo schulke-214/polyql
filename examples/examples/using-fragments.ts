@@ -1,4 +1,4 @@
-import { fetch } from '../lib';
+import { fetch } from '../..';
 
 (async () => {
 	const url = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr';
