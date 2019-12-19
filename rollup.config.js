@@ -50,13 +50,5 @@ export default [
 				}
 			}
 		]
-	},
-	{
-		input: 'src/*.ts',
-		output: {
-			file: 'lib/neu/index.ts',
-			format: 'es'
-		},
-		plugins: [typescript()]
 	}
 ];
