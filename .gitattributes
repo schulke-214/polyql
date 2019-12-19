@@ -1,2 +1,1 @@
-./*.config.js linguist-vendored
-examples/* linguist-documentation
+./*.config.js linguist-language=TypeScript
