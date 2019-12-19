@@ -12,13 +12,15 @@ export class HTTPQueryStringTransporter implements GraphQLTransporter {
 	options: FetchOptions;
 
 	constructor(url: string, options: FetchOptions = {}) {
+		if (!url || typeof url !== 'string') {
+			throw new Error('HTTPQueryStringTransporter: url either not provided or is not a string!');
+		}
+
 		this.url = url;
 		this.options = options;
 	}
 
 	public async fetch(request: GraphQLRequest): Promise<GraphQLResponse> {
-		console.log(request);
-
 		const params = JSON.stringify(request);
 		const url = `${this.url}?${params}`;
 
@@ -26,8 +28,6 @@ export class HTTPQueryStringTransporter implements GraphQLTransporter {
 			method: 'GET',
 			...this.options
 		});
-
-		// console.log(qs.parse(params));
 
 		try {
 			return await response.json();
@@ -42,6 +42,10 @@ export class HTTPBodyTransporter implements GraphQLTransporter {
 	options: FetchOptions;
 
 	constructor(url: string, options: FetchOptions = {}) {
+		if (!url || typeof url !== 'string') {
+			throw new Error('HTTPBodyTransporter: url either not provided or is not a string!');
+		}
+
 		this.url = url;
 
 		const { headers, ...others } = options;
