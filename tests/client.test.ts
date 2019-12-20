@@ -26,5 +26,7 @@ describe('client', () => {
 		});
 
 		xit('validates the url', () => {});
+
+		xit('accepts a custom transporter', () => {});
 	});
 });

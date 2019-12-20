@@ -1,4 +1,3 @@
-// import { GraphQLClient } from '..';
 import { HTTPBodyTransporter, HTTPQueryStringTransporter } from '..';
 
 describe('transporters', () => {
@@ -12,7 +11,6 @@ describe('transporters', () => {
 			expect(createQS).toThrow();
 			expect(createQSWithNonString).toThrow();
 		});
-		xit('works', () => {});
 	});
 
 	describe('HTTPBodyTransporter', () => {
@@ -25,6 +23,5 @@ describe('transporters', () => {
 			expect(createBody).toThrow();
 			expect(createBodyWithNonString).toThrow();
 		});
-		xit('works', () => {});
 	});
 });
