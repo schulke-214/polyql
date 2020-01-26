@@ -7,7 +7,7 @@ set -e
 yarn docs:build
 
 # navigate into the build output directory
-cd docs/.vuepress/dist
+cd docs/book
 
 git init
 git add -A
@@ -17,4 +17,4 @@ git push -f git@github.com:schulke-214/polyql.git master:gh-pages
 
 cd -
 
-rm -rf ./docs/.vuepress/dist
+rm -rf ./docs/book
