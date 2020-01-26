@@ -15,8 +15,8 @@
 		"build": "rollup -c rollup.config.js",
 		"build:clean": "yarn clean && yarn build",
 		"clean": "rm -rf ./lib",
-		"docs:dev": "vuepress dev docs",
-		"docs:build": "vuepress build docs",
+		"docs:dev": "mdbook serve docs",
+		"docs:build": "mdbook build docs",
 		"docs:publish": "./scripts/deploy-docs.sh",
 		"size": "bundlesize"
 	},
@@ -46,7 +46,7 @@
 	},
 	"dependencies": {
 		"cross-fetch": "^3.0.4",
-		"qs": "^6.9.0"
+		"qs": "^6.9.1"
 	},
 	"engines": {
 		"node": ">=8.0.0"
@@ -54,7 +54,7 @@
 	"bundlesize": [
 		{
 			"path": "./lib/polyql.*.js",
-			"maxSize": "6 kB"
+			"maxSize": "8 kB"
 		}
 	],
 	"directories": {
