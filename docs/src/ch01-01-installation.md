@@ -1,6 +1,6 @@
 # Installation
 
-### npm / yarn
+### Using npm / yarn
 
 ```
 npm i polyql
@@ -10,7 +10,7 @@ npm i polyql
 yarn add polyql
 ```
 
-### Inline
+### Using a script tag
 
 ```html
 <script src="https://unpkg.com/polyql@latest/lib/polyql.umd.js" />
