@@ -1,0 +1,5 @@
+[book]
+title = "The PolyQL Documentation"
+authors = ["Maximilian Schulke"]
+multilingual = false
+src = "src"

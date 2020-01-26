@@ -1,8 +1,5 @@
 ---
-home: true
-heroImage: logo.svg
 actionText: Get Started →
-actionLink: /usage
 description: A modern and lightweight GraphQL Client.
 features:
     - title: Lightweight
@@ -11,29 +8,25 @@ features:
       details: Easily extendable so you can make it work for your specific usecase.
     - title: Modern
       details: Really simple modern promise based API - built for async / await.
-footer: MIT Licensed
 ---
-
-:::warning
-This library is very unstable at the moment. I'd suggest only playing around with it until it's stable (v1.0.0 upwards).
-:::
-
-## Installation
-
-```
-yarn add polyql
-```
-
-```html
-<script src="https://unpkg.com/polyql@latest/lib/polyql.umd.js" />
-```
-
-:::tip
-If you include the umd module the `polyql` variable will be available on the window object.
-:::
 
 ## Quickstart
 
 Send a GraphQL query with a single line of code.
 
-<<< @/examples/quickstart.ts
+```js
+import { fetch } from 'polyql';
+
+const query = `
+    {
+        Movie(title: "Inception") {
+            releaseDate
+            actors {
+                    name
+            }
+        }
+    }
+`;
+
+fetch('https://api.graph.cool/simple/v1/movies', query).then(data => console.log(data));
+```
