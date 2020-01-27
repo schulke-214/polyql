@@ -1,6 +1,5 @@
 .circleci/
 .travis.yml
-!src
 docs
 examples
 tests

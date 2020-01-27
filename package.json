@@ -64,7 +64,8 @@
 	"files": [
 		"lib/",
 		"types/",
-		"bin/"
+		"bin/",
+		"src/"
 	],
 	"repository": {
 		"type": "git",
