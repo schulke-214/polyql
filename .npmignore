@@ -1,6 +1,6 @@
 .circleci/
 .travis.yml
-assets
+!src
 docs
 examples
 tests
