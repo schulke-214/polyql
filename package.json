@@ -1,6 +1,6 @@
 {
 	"name": "polyql",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A modern GraphQL-Client powered by the Fetch API",
 	"main": "./lib/polyql.cjs.js",
 	"browser": "./lib/polyql.umd.js",
@@ -70,10 +70,10 @@
 		"type": "git",
 		"url": "git+https://github.com/schulke-214/polyql.git"
 	},
-	"homepage": "https://github.com/schulke-214/polyql#readme",
 	"bugs": {
 		"url": "https://github.com/schulke-214/polyql/issues"
 	},
+	"homepage": "https://schulke-214.github.io/polyql/",
 	"keywords": [
 		"polyql",
 		"graphql",
