@@ -1,0 +1,9 @@
+[book]
+title = "The PolyQL Documentation"
+authors = ["Maximilian Schulke"]
+multilingual = false
+src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/schulke-214/polyql"
+git-repository-icon = "fa-github"

@@ -63,4 +63,7 @@ typings/
 dist
 lib
 .idea
+
+# docs
+
 docs/book

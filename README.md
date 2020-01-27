@@ -1,10 +1,11 @@
 # PolyQL
 
 [![dependencies Status](https://david-dm.org/schulke-214/polyql/status.svg)](https://david-dm.org/schulke-214/polyql)
+[![docs](https://img.shields.io/badge/documentation-up%20to%20date-brightgreen)](https://schulke-214.github.io/polyql)
 [![npm](https://img.shields.io/npm/v/polyql.svg)](https://www.npmjs.com/package/polyql)
 [![license](https://img.shields.io/github/license/schulke-214/polyql.svg)]()
 
-An modern simple GraphQL-Client powered by the Fetch API.
+A modern simple GraphQL-Client powered by the Fetch API.
 
 > **Warning:** This library is very unstable at the moment. I'd suggest only playing around with it until it's stable (v1.0.0 upwards).
 
@@ -17,25 +18,6 @@ yarn add polyql
 ## Documentation
 
 The documentation is available [here](https://schulke-214.github.io/polyql).
-
-## Quickstart
-
-```ts
-import { fetch } from 'polyql';
-
-const query = `
-    {
-        Movie(title: "Inception") {
-            releaseDate
-            actors {
-                    name
-            }
-        }
-    }
-`;
-
-fetch('https://api.graph.cool/simple/v1/movies', query).then(data => console.log(data));
-```
 
 ## Contributing
 

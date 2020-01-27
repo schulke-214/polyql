@@ -26,7 +26,7 @@ export default [
 				name: pkg.name
 			}
 		],
-		external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
+		external: [],
 		plugins: [
 			resolve({
 				browser: true,
