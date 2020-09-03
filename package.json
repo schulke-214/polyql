@@ -26,7 +26,7 @@
 		"@babel/preset-typescript": "^7.6.0",
 		"@types/jest": "^24.0.20",
 		"@types/qs": "^6.5.3",
-		"bl": "^0.9.5",
+		"bl": "^2.2.1",
 		"bundlesize": "^0.18.0",
 		"codacy-coverage": "^3.4.0",
 		"core-js": "^3.3.4",
